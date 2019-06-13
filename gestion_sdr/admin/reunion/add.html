@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Ajouter Réunion</title>
+    <style type="text/css" media="screen">
+body {
+	font: .95em/1.5 "Lucida Grande", "Lucida Sans Unicode", helvetica, verdana, arial, sans-serif;
+  margin: 0 auto;
+  width: 800px;
+}
+strong {
+  background: #ffc;
+}
+    </style>
+</head>
+
+<body>
+    <a href="../index.php">Accueil</a>
+	<br/><br/>
+
+	<form action="add.php" method="post" name="form1">
+		<table width="25%" border="0">
+			<tr> 
+				<td>Date de réunion</td>
+				<td><input type="date" name="date_reunion"></td>
+			</tr>
+			<tr> 
+				<td>Heure début</td>
+				<td><input type="time" name="heure_debut"></td>
+			</tr>
+			<tr>
+				<td>Heure fin</td>
+				<td><input type="time" name="heure_fin" placeholder="Date de réservation"></td>
+			</tr>
+			<tr> 
+				<td></td>
+				<td><input type="submit" name="Submit" value="Add"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

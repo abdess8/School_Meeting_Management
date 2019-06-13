@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>Ajouter Professeur</title>
+    <style type="text/css" media="screen">
+body {
+	font: .95em/1.5 "Lucida Grande", "Lucida Sans Unicode", helvetica, verdana, arial, sans-serif;
+  margin: 0 auto;
+  width: 800px;
+}
+strong {
+  background: #ffc;
+}
+    </style>
+</head>
+
+<body>
+    <a href="../index.php">Accueil</a>
+	<br/><br/>
+
+	<form action="add.php" method="post" name="form1">
+		<table width="25%" border="0">
+			<tr> 
+				<td>Nom du Professeur</td>
+				<td><input type="text" name="nom"></td>
+			</tr>
+            <tr> 
+				<td>Prénom du Professeur</td>
+				<td><input type="text" name="prenom"></td>
+			</tr>
+            <tr> 
+				<td>Email du Professeur</td>
+				<td><input type="email" name="email"></td>
+			</tr>
+			<tr> 
+				<td>Département</td>
+				<td><input type="text" name="departement"></td>
+			</tr>
+            <tr> 
+				<td>Téléphone du Professeur</td>
+				<td><input type="text" name="phone"></td>
+			</tr>
+            <tr> 
+				<td>Password</td>
+				<td><input type="password" name="pwd"></td>
+			</tr>
+			<tr> 
+				<td></td>
+				<td><input type="submit" name="Submit" value="Add"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

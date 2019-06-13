@@ -1,0 +1,65 @@
+<?php
+include_once("../../cxn.php");
+$select = "SELECT * FROM salle ORDER BY id_salle DESC";
+$result = mysqli_query($db, $select);
+if (!$result) {
+    printf("Error: %s\n", mysqli_error($db));
+    exit();
+}
+
+
+?>
+
+<html>
+<head>	
+	<title>Espace Administrateur - Salles de Réunion</title>
+    <link rel="stylesheet" href="../../css/style2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+</head>
+
+<body>
+<div class="header">
+    <h2 class="logo">Gestion Reunion - Espace Salles</h2>
+    <input type="checkbox" id="chk">
+    <label for="chk" class="show-menu-btn">
+      <i class="fas fa-ellipsis-h"></i>
+    </label>
+
+    <ul class="menu">
+                <a href="../index.php">Menu</a>
+                <a href="add.html">Nouvelle Salle</a>
+                <a href="../../login_admin.php">Déconnexion</a>
+
+      <label for="chk" class="hide-menu-btn">
+        <i class="fas fa-times"></i>
+      </label>
+    </ul>
+  </div>
+
+
+
+<table align="center" width='100%' border=0>
+
+    <tr>
+        <td align="center" colspan="5"><h2>Liste des Salles</h2></td>
+    </tr>        
+
+	<tr bgcolor='#CCCCCC'>
+		<td>Intitulé</td>
+        <td>Statut</td>
+		<td>Update</td>
+	</tr>
+<?php 
+            while($res = mysqli_fetch_array($result)) { 		
+                echo "<tr>";
+                echo "<td>".$res['intitule']."</td>";
+                echo "<td>".$res['statut']."</td>";
+                echo "<td><a href=\"edit_salle.php?id_salle=$res[id_salle]\">Edit</a> | <a href=\"delete_salle.php?id_salle=$res[id_salle]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
+            }
+        
+	?>
+	</table>
+
+</body>
+</html>
